@@ -1,0 +1,30 @@
+<mat-drawer-container class="drawer-container mat-typography" autosize>
+  <mat-drawer
+    #drawer
+    mode="side"
+    disableClose="true"
+    [opened]="true"
+  >
+    <button mat-icon-button (click)="isExpanded = !isExpanded" style="margin: 16px;">
+      <mat-icon aria-label="Menu">menu</mat-icon>
+    </button>
+
+    <mat-list>
+      <mat-list-item *ngFor="let sideDrawerItem of sideDrawerItems">
+        <div
+          class="flex align-center"
+          (click)="router.navigate([sideDrawerItem.route])"
+        >
+          <button mat-icon-button>
+            <mat-icon>{{ sideDrawerItem.icon }}</mat-icon>
+          </button>
+          <div *ngIf="isExpanded" class="ml-1">{{ sideDrawerItem.label }}</div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>

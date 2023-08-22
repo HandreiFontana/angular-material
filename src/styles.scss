@@ -2,3 +2,37 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.fh {
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.button {
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+.button:hover {
+  filter: brightness(0.8)
+}
