@@ -1,0 +1,30 @@
+.card {
+  width: 350px; 
+  height: 445px;
+  border-radius: 4px;
+}
+
+.card-content {
+  width: 290px;
+  padding: 30px;
+}
+
+img {
+  width: 200px;
+  margin-top: -20px;
+  margin-left: -12px;
+}
+
+.form-inputs {
+  
+}
+
+@media (min-width: 1000px) {
+  .card {
+    width: 890px;
+  
+    background-size: contain;
+    background-image: url("/assets/login.svg");
+    background-position: center;
+  }
+}

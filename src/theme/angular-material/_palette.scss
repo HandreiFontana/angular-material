@@ -1,0 +1,81 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $warn-palette: map.get($color-config, 'warn');
+
+  .primary-50 {
+    color: mat.get-color-from-palette($primary-palette, 50);
+  }
+  .primary-100 {
+    color: mat.get-color-from-palette($primary-palette, 100);
+  }
+  .primary-200 {
+    color: mat.get-color-from-palette($primary-palette, 200);
+  }
+  .primary-300 {
+    color: mat.get-color-from-palette($primary-palette, 300);
+  }
+  .primary-400 {
+    color: mat.get-color-from-palette($primary-palette, 400);
+  }
+  .primary-500 {
+    color: mat.get-color-from-palette($primary-palette, 500);
+  }
+  .primary-600 {
+    color: mat.get-color-from-palette($primary-palette, 600);
+  }
+  .primary-700 {
+    color: mat.get-color-from-palette($primary-palette, 700);
+  }
+  .primary-800 {
+    color: mat.get-color-from-palette($primary-palette, 800);
+  }
+  .primary-900 {
+    color: mat.get-color-from-palette($primary-palette, 900);
+  }
+
+  .bg-primary-50 {
+    background-color: mat.get-color-from-palette($primary-palette, 50);
+  }
+  .bg-primary-100 {
+    background-color: mat.get-color-from-palette($primary-palette, 100);
+  }
+  .bg-primary-200 {
+    background-color: mat.get-color-from-palette($primary-palette, 200);
+  }
+  .bg-primary-300 {
+    background-color: mat.get-color-from-palette($primary-palette, 300);
+  }
+  .bg-primary-400 {
+    background-color: mat.get-color-from-palette($primary-palette, 400);
+  }
+  .bg-primary-500 {
+    background-color: mat.get-color-from-palette($primary-palette, 500);
+  }
+  .bg-primary-600 {
+    background-color: mat.get-color-from-palette($primary-palette, 600);
+  }
+  .bg-primary-700 {
+    background-color: mat.get-color-from-palette($primary-palette, 700);
+  }
+  .bg-primary-800 {
+    background-color: mat.get-color-from-palette($primary-palette, 800);
+  }
+  .bg-primary-900 {
+    background-color: mat.get-color-from-palette($primary-palette, 900);
+  }
+
+  .warn-500 {
+    color: mat.get-color-from-palette($warn-palette, 500);
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+}

@@ -1,0 +1,27 @@
+<div class="card mat-elevation-z8">
+  <form [formGroup]="signInForm" novalidate (ngSubmit)="signInForm.valid && onSubmit()" class="card-content flex flex-column">
+    <img src="/assets/logo.svg" alt="logo">
+    
+    <p class="mat-h2">Login</p>
+
+    <div class="form-inputs flex flex-column">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label class="input-label primary-900" [class.warn-500]="verifyIfInvalid('email')">Digite seu e-mail</mat-label>
+        <input matInput formControlName="email" type="email" autocomplete="off" autofocus>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label class="input-label primary-900" [class.warn-500]="verifyIfInvalid('password')">Digite sua senha</mat-label>
+        <input matInput formControlName="password" type="password" autocomplete="off">
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" (click)="signInForm.markAllAsTouched()">Acessar</button>
+
+    <div class="flex justify-space-between mt-1">
+      <a href="#" class="primary-900">Esqueceu sua senha?</a>
+
+      <a href="#" class="primary-900">Crie sua conta!</a>
+    </div>
+  </form>
+</div>
